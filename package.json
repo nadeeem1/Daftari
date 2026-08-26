@@ -1,0 +1,19 @@
+{
+  "name": "daftari-landing",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "لاندنج بيدج لمنتج دفتري — Vite + SolidJS",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "solid-js": "1.9.15"
+  },
+  "devDependencies": {
+    "vite": "8.2.2",
+    "vite-plugin-solid": "2.11.14"
+  }
+}
