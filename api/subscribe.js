@@ -17,7 +17,8 @@
 // 4. خزّن أي مفتاح API (خدمة إيميل، قاعدة بيانات) في Environment
 //    Variables على Vercel، وابدًا متحطش مفتاح في الكود مباشرة.
 
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const EMAIL_RE =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
