@@ -205,10 +205,16 @@
 
 | البند | الحالة | ما المطلوب |
 |---|---|---|
+| **Commit** | ✅ `db4de5c` | `fix: improve form validation and add comprehensive test report` — tree نظيف |
+| **تجهيز النشر** | ✅ تم الفحص | `base=/daftari-landing/`، مسارات assets في `dist/index.html` صحيحة، `VITE_DEMO_MODE=true` مفعّل صراحةً في workflow |
+| **ريبو `daftari-landing`** | ❌ **غير موجود على GitHub** | حساب `nadeeem1` فيه ريبو عام واحد فقط اسمه `GYM` — يلزم إنشاء `daftari-landing` (Public) |
+| **دفع الريموت** | ⚠️ Blocked | الجهاز بلا مصادقة git (لا gh / لا SSH / لا helper): `fatal: could not read Username for 'https://github.com'` |
 | **Playwright MCP** | ⚠️ Blocked هذه الجلسة (chome channel) | إعادة تشغيل opencode — سيقرأ `BROWSER=chromium` من `opencode.json` ويعمل مباشرة |
-| **Lighthouse / axe automécé** | ⏸ لم يُشغَّل في هذه الجلسة | تشغيله عند توفر الأداة |
-| **نشر GitHub Pages** | ⏸ Push متوقف على مصادقة `git` على الجهاز | `git push -u origin main` عبر PAT/Browser، ثم تفعيل المصدر عبر GitHub Actions |
+| **Lighthouse / axe automatique** | ⏸ لم يُشغَّل في هذه الجلسة | تشغيله عند توفر الأداة |
+| **اختبار الموقع المنشور فعليًا** | ⏸ بانتظار الـ deploy | الخطوة الأولى بعد نشر `https://nadeeem1.github.io/daftari-landing/` |
 | **وضع الإنتاج الكامل** (`VITE_DEMO_MODE=false`) | 📌 جاهز للتفعيل | عند الرفع على Vercel مع تشغيل `api/subscribe.js` |
+
+> 💡 **خطة النشر خطوة بخطوة موجودة في `DEPLOY.md`** (إنشاء الريبو → مصادقة git → تفعيل Pages/GitHub Actions → شيك لست التحقق بعد النشر). الرابط المتوقع: `https://nadeeem1.github.io/daftari-landing/`.
 
 ---
 
@@ -241,7 +247,9 @@ Forms:           🟢 all valid/invalid cases handled
 Performance:     🟢 12.24 kB JS gzip
 Security:        🟢 no secrets / no XSS vector / dual validation
 Build/Preview:   🟢 21 modules, HTTP 200, 0 errors
-Deployment:      ⏳ blocked only on machine git auth (user action)
+Commit:          db4de5c — working tree clean
+Deployment:      🕐 READY TO DEPLOY — blocked only on external (user GitHub account:
+                 create `daftari-landing` repo + authenticate push) — see DEPLOY.md
 Final verdict:   READY — deployable to GitHub Pages today
 ```
 
