@@ -40,11 +40,11 @@ https://nadeeem1.github.io/daftari-landing/
 
 ## 3) التحقق بعد النشر (شيك لست)
 
-- [ ] فتح الرابط → عنوان «دفتري — دفتر حسابات رقمي للفريلانسرز».
+- [ ] فتح الرابط → عنوان «Daftari — A digital ledger for freelancers».
 - [ ] الفافيكون والـ CSS والـ JS يعملون (افحص Console: صفر أخطاء).
-- [ ] ختم «مُقفَل» يظهر + العدّادات تتسرّع.
-- [ ] التبديل AR/EN يعمل و`dir` ينقلب.
-- [ ] نموذج الاشتراك بإيميل صالح → رسالة **Demo** («دي نسخة تجريبية — الإيميل مش هيتسجل») وليست «بعتنالك الرابط». (في `TEST_REPORT.md` سبب ده)
+- [ ] ختم «BALANCED» يظهر + العدّادات تتسرّع.
+- [ ] الموقع إنجليزي خالص: `lang="en" dir="ltr"` بلا زر تبديل.
+- [ ] نموذج الاشتراك بإيميل صالح → رسالة **Demo** («your email won’t be stored…») وليست «check your inbox». (في `TEST_REPORT.md` سبب ده)
 - [ ] Refresh / فتح الرابط مباشرة لا يكسر الصفحة (SPA بدون client routing).
 - [ ] فتح `…/daftari-landing/robots.txt` → `Allow: /`.
 

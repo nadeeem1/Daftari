@@ -1,12 +1,12 @@
-export default function Testimonial(props) {
+export default function Testimonial() {
   return (
     <section class="testimonial">
       <div class="wrap">
         <blockquote>
-          <p>{props.t.quote}</p>
+          <p>I used to lose two hours every month just making an invoice and chasing payments. Now it takes five minutes.</p>
           <footer>
-            <span class="q-name">{props.t.quoteName}</span>
-            <span class="q-role">{props.t.qrole}</span>
+            <span class="q-name">Sara Abdullah</span>
+            <span class="q-role">UI/UX designer, freelancer</span>
           </footer>
         </blockquote>
       </div>

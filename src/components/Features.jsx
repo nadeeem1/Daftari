@@ -27,26 +27,26 @@ const icons = {
 };
 
 const features = [
-  { id: 'f1', icon: 'clock' },
-  { id: 'f2', icon: 'invoice' },
-  { id: 'f3', icon: 'currency' },
-  { id: 'f4', icon: 'portal' }
+  { icon: 'clock', title: 'One-tap time tracking', desc: 'Start the timer as you work, or log hours manually at the end of the day. Every minute counted correctly.' },
+  { icon: 'invoice', title: 'Professional invoices in seconds', desc: 'Ready templates with your logo and details, sent by email or a direct client link.' },
+  { icon: 'currency', title: 'Multi-currency by default', desc: 'Work with a client in Dubai and one in Germany without opening a conversion calculator.' },
+  { icon: 'portal', title: 'A portal for your client', desc: 'Your client sees invoice status and pays from one link — no more chasing on WhatsApp.' }
 ];
 
-export default function Features(props) {
+export default function Features() {
   return (
     <section id="features" class="features">
       <div class="wrap">
-        <h2 class="section-title">{props.t.featTitle}</h2>
-        <p class="section-sub">{props.t.featSub}</p>
+        <h2 class="section-title">Everything you need, one page</h2>
+        <p class="section-sub">Not another bloated accounting suite. Just the tools that give you back time for the work itself.</p>
 
         <div class="feature-grid cq-container">
           <For each={features}>
             {(feature) => (
               <article class="feature-card">
                 <div class="feature-icon">{icons[feature.icon]}</div>
-                <h3>{props.t[`${feature.id}t`]}</h3>
-                <p>{props.t[`${feature.id}d`]}</p>
+                <h3>{feature.title}</h3>
+                <p>{feature.desc}</p>
               </article>
             )}
           </For>

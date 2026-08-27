@@ -1,4 +1,4 @@
-// بيانات الصفحة الثابتة — مفصولة عن الـ UI عشان تركيز التعديل في مكان واحد
+// Static page data — kept separate from components (deep module: one place to edit)
 
 export const ledgerRows = [
   { client: 'Studio Nour', amt: '4,200', status: 'paid' },
@@ -10,8 +10,8 @@ export const ledgerRows = [
 export const ledgerTargetTotal = 7300;
 
 export const stats = [
-  { labelKey: 'stat1', target: 2400 },
-  { labelKey: 'stat2', target: 150 },
-  { labelKey: 'stat3', target: 9 },
-  { labelKey: 'stat4', target: 48 }
+  { label: 'invoices sent', target: 2400 },
+  { label: 'freelancers on Daftari', target: 150 },
+  { label: 'currencies supported', target: 9 },
+  { label: 'avg. hours saved / month', target: 48 }
 ];

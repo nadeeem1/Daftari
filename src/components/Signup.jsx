@@ -5,7 +5,7 @@ const EMAIL_RE =
 const REQUEST_TIMEOUT_MS = 4000;
 const DEMO_MODE = import.meta.env.VITE_DEMO_MODE !== 'false';
 
-export default function Signup(props) {
+export default function Signup() {
   const [email, setEmail] = createSignal('');
   const [formStatus, setFormStatus] = createSignal(null);
   const [submitting, setSubmitting] = createSignal(false);
@@ -50,10 +50,10 @@ export default function Signup(props) {
   return (
     <section id="signup" class="signup">
       <div class="wrap signup-inner">
-        <h2>{props.t.signupTitle}</h2>
-        <p>{props.t.signupSub}</p>
+        <h2>Ready to open your ledger?</h2>
+        <p>Drop your email and we&rsquo;ll send the sign-up link right away.</p>
         <form class="signup-form" novalidate onSubmit={handleSubmit}>
-          <label for="email" class="visually-hidden">{props.t.emailLabel}</label>
+          <label for="email" class="visually-hidden">Email address</label>
           <input
             type="email"
             id="email"
@@ -61,7 +61,7 @@ export default function Signup(props) {
             required
             maxlength="254"
             autocomplete="email"
-            placeholder={props.t.emailPh}
+            placeholder="you@example.com"
             value={email()}
             aria-invalid={formStatus() === 'error'}
             aria-describedby="form-feedback"
@@ -71,7 +71,7 @@ export default function Signup(props) {
             }}
           />
           <button type="submit" class="btn btn-primary" disabled={submitting()}>
-            {submitting() ? '...' : props.t.signupCta}
+            {submitting() ? '...' : 'Send me the link'}
           </button>
         </form>
         <p
@@ -81,13 +81,13 @@ export default function Signup(props) {
           aria-live="polite"
         >
           {formStatus() === 'ok'
-            ? props.t.formOk
+            ? 'Done! Check your inbox for the sign-up link.'
             : formStatus() === 'error'
-              ? props.t.formErr
+              ? 'Please enter a valid email address.'
               : formStatus() === 'net'
-                ? props.t.formNetErr
+                ? 'Could not reach the server, please try again.'
                 : formStatus() === 'demo'
-                  ? props.t.formDemo
+                  ? 'Done! This is a demo \u2014 your email won\u2019t be stored until the server is connected.'
                   : ''}
         </p>
       </div>

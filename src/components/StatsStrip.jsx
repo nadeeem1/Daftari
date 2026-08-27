@@ -3,7 +3,7 @@ import { countUp } from '../lib/countUp';
 import { useOnScreen } from '../lib/useOnScreen';
 import { stats } from '../data/content';
 
-export default function StatsStrip(props) {
+export default function StatsStrip() {
   const [values, setValues] = createSignal(stats.map(() => 0));
 
   const ref = useOnScreen(() => {
@@ -21,7 +21,7 @@ export default function StatsStrip(props) {
           {(stat, i) => (
             <div class="stat">
               <span class="stat-num">{values()[i()].toLocaleString('en-US')}</span>
-              <span class="stat-label">{props.t[stat.labelKey]}</span>
+              <span class="stat-label">{stat.label}</span>
             </div>
           )}
         </For>

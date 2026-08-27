@@ -1,7 +1,6 @@
-# دفتري — Landing Page (Vite + SolidJS)
+# Daftari — Landing Page (Vite + SolidJS)
 
-لاندنج بيدج لمنتج SaaS خيالي اسمه **دفتري**: أداة فوترة وتتبّع وقت للفريلانسرز العرب.
-النسخة دي مبنية بـ Stack حديث بدل النسخة الأولى (HTML/CSS/JS خام)، عشان تعكس أحدث اتجاهات الواجهة الأمامية في 2026.
+Landing page for a fictional SaaS product called **Daftari**: an invoicing and time-tracking tool for freelancers. The site is **English-only** (prepared as a portfolio piece for international platforms like Upwork/Freelancer). Built on a modern 2026 stack.
 
 ## الـ Stack
 
@@ -35,11 +34,13 @@ npm run preview    # معاينة نسخة الإنتاج محليًا
 ## بنية الملفات
 
 ```
-├── index.html          # نقطة الدخول، بتحمّل src/main.jsx
+├── index.html          # نقطة الدخول، بتحمّل src/main.jsx (lang=en dir=ltr)
 ├── src/
 │   ├── main.jsx         # تركيب التطبيق (render)
-│   ├── App.jsx           # المكوّن الرئيسي — كل الصفحة مبنية بـ Signals
-│   ├── translations.js   # قاموس AR/EN
+│   ├── App.jsx           # المكوّن الرئيسي — كل الصفحة
+│   ├── data/content.js   # محتوى ثابت (الليدجر والإحصائيات)
+│   ├── lib/              # أدوات (countUp, useOnScreen)
+│   ├── components/       # مكونات الصفحة التسعة
 │   └── index.css         # التنسيقات + Container Queries + :has()
 ├── api/
 │   └── subscribe.js      # Serverless Function لفورم الاشتراك
