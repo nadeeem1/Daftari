@@ -49,7 +49,7 @@ RSC ومفاهيم زي Server Components بتاخد قيمتها الحقيقي
 
 ## 5) الخطوات الجاية
 1. `npm install` ثم `npm run dev` للمعاينة محليًا.
-2. ادفع المشروع على GitHub repo جديد (اسم واضح: `daftari-landing`).
+2. ادفع المشروع على GitHub repo جديد (تم: `nadeeem1/Daftari`) وربطه بـ GitHub Pages.
 3. اربطه بـ Vercel — هيكتشف إعدادات Vite تلقائيًا.
 4. حط رابط الـ live demo ورابط الـ GitHub جنب بعض في بروفايلك على خمسات/مستقل، واكتب في وصف المشروع: "Vite + SolidJS + Serverless function" — الكلمات دي بالظبط بتفرق مع عملاء تقنيين بيدوروا على حد مواكب.
 

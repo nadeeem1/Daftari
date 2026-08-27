@@ -12,9 +12,9 @@
 |---|---|
 | نظام التشغيل | Linux (مجلد العمل يحتوي مسافات — تم التعامل معها) |
 | الـ Framework | Vite v8.2.2 + SolidJS v1.9.15 |
-| `base` | `/daftari-landing/` (مطابق لمسار GitHub Pages) |
-| Dev Server | `http://localhost:5173/daftari-landing/` — HTTP 200 |
-| Preview (بناء الإنتاج) | `http://localhost:4173/daftari-landing/` — HTTP 200 |
+| `base` | `/Daftari/` (مطابق لمسار GitHub Pages) |
+| Dev Server | `http://localhost:5173/Daftari/` — HTTP 200 |
+| Preview (بناء الإنتاج) | `http://localhost:4175/Daftari/` — HTTP 200 |
 | المتصفح | Chromium headless عبر Playwright (Node scripts) |
 | **ملاحظة شفافية** | مُعدّ الاختبار (Playwright MCP) لم يعمل في هذه الجلسة: مشروع MCP يستخدم قناة `chrome` المحلية بـ `/opt/google/chrome/chrome` وهي غير موجودة، و`/opt` مملوك لـ root بدون صلاحيات sudo على هذا الجهاز لإضافة symlink. **الحل جاهز** في `opencode.json`: `BROWSER=chromium`. سيتفعّل تلقائيًا عند إعادة تشغيل opencode. لذلك تم تنفيذ الاختبارات الكاملة بنفس المحرك (Playwright Chromium) عبر سكربتات Node مباشرةً — نفس النتائج التي سيعطيها MCP تمامًا. |
 | الأداة | محرك Playwright Chromium من كاش npm playright + فحص يدوي منطقي لكل اختبار |
@@ -27,7 +27,7 @@
 
 | الصفحة | URL | Status | ملاحظات |
 |---|---|---|---|
-| الرئيسية | `/daftari-landing/` | ✅ 200 | العنوان: «دفتري — دفتر حسابات رقمي للفريلانسرز» |
+| الرئيسية | `/Daftari/` | ✅ 200 | العنوان: «دفتري — دفتر حسابات رقمي للفريلانسرز» |
 | Anchor مباشر | `/#pricing`, `/#how`, `/#features`, `/#signup` | ✅ | القسم يظهر أسفل الهيدر مباشرة (y≈156) |
 | مسار غير موجود | `no-such-page` | ⚠️ Dev:200 (SPA fallback) | على GH Pages سيكون 404 تلقائي — لا يوجد client routing |
 
@@ -209,14 +209,14 @@
 |---|---|---|
 | **Commit** | ✅ `db4de5c` | `fix: improve form validation and add comprehensive test report` — tree نظيف |
 | **تجهيز النشر** | ✅ تم الفحص | `base=/daftari-landing/`، مسارات assets في `dist/index.html` صحيحة، `VITE_DEMO_MODE=true` مفعّل صراحةً في workflow |
-| **ريبو `daftari-landing`** | ❌ **غير موجود على GitHub** | حساب `nadeeem1` فيه ريبو عام واحد فقط اسمه `GYM` — يلزم إنشاء `daftari-landing` (Public) |
-| **دفع الريموت** | ⚠️ Blocked | الجهاز بلا مصادقة git (لا gh / لا SSH / لا helper): `fatal: could not read Username for 'https://github.com'` |
+| **ريبو النشر** | ✅ موجود الآن: `nadeeem1/Daftari` (Public) | تم إنشاؤه على GitHub وسيُدوَّن تفصيل الدفع/النشر في قسم Production أدناه |
+| **دفع الريموت** | ✅ SSH مصادق عليه | `git push` عبر `git@github.com:nadeeem1/Daftari.git` — تم بنجاح (انظر قسم Production) |
 | **Playwright MCP** | ⚠️ Blocked هذه الجلسة (chome channel) | إعادة تشغيل opencode — سيقرأ `BROWSER=chromium` من `opencode.json` ويعمل مباشرة |
 | **Lighthouse / axe automatique** | ⏸ لم يُشغَّل في هذه الجلسة | تشغيله عند توفر الأداة |
 | **اختبار الموقع المنشور فعليًا** | ⏸ بانتظار الـ deploy | الخطوة الأولى بعد نشر `https://nadeeem1.github.io/daftari-landing/` |
 | **وضع الإنتاج الكامل** (`VITE_DEMO_MODE=false`) | 📌 جاهز للتفعيل | عند الرفع على Vercel مع تشغيل `api/subscribe.js` |
 
-> 💡 **خطة النشر خطوة بخطوة موجودة في `DEPLOY.md`** (إنشاء الريبو → مصادقة git → تفعيل Pages/GitHub Actions → شيك لست التحقق بعد النشر). الرابط المتوقع: `https://nadeeem1.github.io/daftari-landing/`.
+> 💡 **خطة النشر خطوة بخطوة موجودة في `DEPLOY.md`**. الرابط المنشور: `https://nadeeem1.github.io/Daftari/`.
 
 ---
 
