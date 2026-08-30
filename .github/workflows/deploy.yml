@@ -23,11 +23,13 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm ci
-      - run: npm run build
-        env:
-          # GitHub Pages لا يقدّم serverless — النموذج يبقى في وضع التجربة الصادق (demo)
-          VITE_DEMO_MODE: 'true'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: SPA fallback
+        run: cp dist/index.html dist/404.html
+      - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
